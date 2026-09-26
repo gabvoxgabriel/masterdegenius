@@ -274,7 +274,7 @@ img{max-width:100%;display:block;height:auto}
 .footer-grid{display:grid;grid-template-columns:1fr;gap:24px;margin-bottom:28px}
 @media(min-width:600px){.footer-grid{grid-template-columns:1fr 1fr;gap:24px}}
 @media(min-width:1024px){.footer-grid{grid-template-columns:1.4fr 0.8fr 0.8fr 1fr;gap:32px;margin-bottom:36px}}
-.footer-brand .logo{filter:brightness(0) invert(1);height:32px;margin-bottom:12px}
+.footer-brand .logo {height:32px; margin-bottom:12px}
 @media(min-width:768px){.footer-brand .logo{height:36px;margin-bottom:14px}}
 .footer-brand p{font-size:13px;line-height:1.6;color:#9DB0CC;overflow-wrap:break-word}
 .footer h4{color:white;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:12px}
@@ -923,22 +923,28 @@ img{max-width:100%;display:block;height:auto}
 <script>
 const hamburger = document.getElementById('hamburger');
 const mobileNav = document.getElementById('mobileNav');
-hamburger.addEventListener('click', ()=>{
+
+hamburger.addEventListener('click', () => {
   mobileNav.classList.toggle('open');
-  const open = mobileNav.classList.contains('open');
-  hamburger.setAttribute('aria-expanded', open);
-  document.body.style.overflow = open ? 'hidden' : '';
+  const isOpen = mobileNav.classList.contains('open');
+  hamburger.setAttribute('aria-expanded', isOpen);
+  document.body.style.overflow = isOpen ? 'hidden' : '';
 });
-mobileNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
-  mobileNav.classList.remove('open');
-  document.body.style.overflow = '';
-}));
-document.querySelectorAll('[data-accordion]').forEach(acc=>{
+
+mobileNav.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    mobileNav.classList.remove('open');
+    document.body.style.overflow = '';
+  });
+});
+
+document.querySelectorAll('[data-accordion]').forEach(acc => {
   const head = acc.querySelector('.accordion-head');
-  head.addEventListener('click', ()=>{
+  head.addEventListener('click', () => {
     acc.classList.toggle('open');
   });
 });
+
 document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 </body>
