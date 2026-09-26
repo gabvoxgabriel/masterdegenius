@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>MasterDe’Genius Academy | Learn, Prepare, Excel</title>
+<meta name="description" content="MasterDe’Genius Academy offers premium tutorial classes, 200 pre-recorded teaching audios, private one-on-one tutorials, handbooks and Edu App for JAMB, WAEC, NECO and GCE preparation. Learn, Prepare, Excel.">
+<meta name="theme-color" content="#0A2342">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="assets/logo.png">
+<style>
+:root{
+  --navy:#0A2342;
+  --navy-2:#102E56;
+  --gold:#FFC300;
+  --gold-2:#FFD84D;
+  --gold-light:#FFF8D6;
+  --white:#FFFFFF;
+  --gray-50:#F8FAFC;
+  --gray-100:#F1F5F9;
+  --gray-200:#E2E8F0;
+  --gray-300:#CBD5E1;
+  --gray-600:#475569;
+  --gray-700:#334155;
+  --gray-900:#0F172A;
+  --shadow:0 8px 30px rgba(10,35,66,0.08);
+  --shadow-lg:0 20px 50px rgba(10,35,66,0.12);
+}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px;overflow-x:hidden}
+body{margin:0;font-family:'Inter',system-ui,sans-serif;color:var(--gray-700);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;word-wrap:break-word;overflow-wrap:break-word}
+h1,h2,h3,h4{font-family:'Plus Jakarta Sans',sans-serif;color:var(--navy);letter-spacing:-0.02em;margin:0;overflow-wrap:break-word;word-break:break-word}
+h1{font-size:clamp(28px,7vw,52px);line-height:1.05;font-weight:800}
+h2{font-size:clamp(22px,6vw,36px);line-height:1.15;font-weight:800}
+h3{font-size:clamp(16px,4.5vw,20px);line-height:1.3;font-weight:700}
+p{margin:0;overflow-wrap:break-word}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block;height:auto}
+.container{width:min(1180px, calc(100% - 32px));margin-inline:auto}
+@media(min-width:768px){.container{width:min(1180px,92%)}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 22px;border-radius:999px;font-weight:800;font-size:14px;letter-spacing:0.01em;transition:all .2s ease;border:1.5px solid transparent;cursor:pointer;text-align:center;line-height:1.2;white-space:normal;max-width:100%;overflow-wrap:break-word}
+.btn-gold{background:var(--gold);color:var(--navy);border-color:var(--gold)}
+.btn-gold:hover{background:var(--gold-2)}
+.btn-navy{background:var(--navy);color:var(--white);border-color:var(--navy)}
+.btn-navy:hover{background:var(--navy-2)}
+.btn-outline{background:var(--white);color:var(--navy);border-color:var(--gray-300)}
+.btn-outline:hover{border-color:var(--navy);background:var(--gray-50)}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;font-size:11px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;background:var(--gray-100);color:var(--navy);border:1px solid var(--gray-200);max-width:100%}
+.badge-gold{background:var(--gold-light);border-color:#FFE88A}
+.eyebrow{font-size:11px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:var(--navy);margin-bottom:12px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.eyebrow::before{content:"";width:28px;height:2px;background:var(--gold);display:inline-block;border-radius:2px;flex-shrink:0}
+
+/* Header */
+.header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--gray-200)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;height:68px;gap:12px}
+.logo{height:38px;width:auto;object-fit:contain;flex-shrink:0}
+@media(min-width:768px){.header-inner{height:76px}.logo{height:42px}}
+.nav{display:none}
+@media(min-width:1024px){.nav{display:flex;align-items:center;gap:22px}}
+.nav a{font-size:13.5px;font-weight:600;color:var(--gray-700);position:relative;padding:4px 0;white-space:nowrap}
+.nav a:hover{color:var(--navy)}
+.header-actions{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.header-actions .btn{padding:10px 16px;font-size:12.5px}
+@media(min-width:768px){.header-actions .btn{padding:10px 18px;font-size:13px}}
+.hamburger{display:flex;width:42px;height:42px;border-radius:10px;border:1px solid var(--gray-200);background:white;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0}
+@media(min-width:1024px){.hamburger{display:none}}
+.hamburger span{width:18px;height:2px;background:var(--navy);display:block;position:relative;transition:.2s}
+.hamburger span::before,.hamburger span::after{content:"";position:absolute;left:0;width:18px;height:2px;background:var(--navy);transition:.2s}
+.hamburger span::before{top:-6px}.hamburger span::after{top:6px}
+.mobile-nav{display:none;position:fixed;inset:68px 0 0 0;background:white;z-index:40;padding:16px;width:100%;border-top:1px solid var(--gray-200);overflow:auto}
+@media(min-width:768px){.mobile-nav{inset:76px 0 0 0}}
+.mobile-nav.open{display:block}
+.mobile-nav a{display:block;padding:14px 12px;font-weight:600;font-size:15px;border-bottom:1px solid var(--gray-100);color:var(--navy);overflow-wrap:break-word}
+.mobile-nav .btn{margin-top:16px;width:100%}
+
+/* Hero - mobile first */
+.hero{padding:28px 0 40px;background:linear-gradient(180deg,#FFFFFF 0%,#F8FAFC 100%);overflow:hidden}
+@media(min-width:768px){.hero{padding:48px 0 72px}}
+.hero-grid{display:grid;grid-template-columns:1fr;gap:28px;align-items:start}
+@media(min-width:1024px){.hero-grid{grid-template-columns:1.1fr 0.9fr;gap:40px;align-items:center}}
+.hero h1{margin:14px 0 16px}
+.hero p.lead{font-size:16px;line-height:1.6;color:var(--gray-600);margin-bottom:22px}
+@media(min-width:768px){.hero p.lead{font-size:18px;margin-bottom:28px}}
+.hero-ctas{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}
+.hero-ctas .btn{flex:1 1 100%}
+@media(min-width:480px){.hero-ctas .btn{flex:0 1 auto}}
+.hero-meta{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px;padding-top:16px;border-top:1px solid var(--gray-200)}
+.hero-meta div{display:flex;align-items:center;gap:8px;font-size:12.5px;font-weight:600;color:var(--gray-600);max-width:100%}
+.hero-meta i{width:24px;height:24px;border-radius:50%;background:var(--gold-light);color:var(--navy);display:inline-flex;align-items:center;justify-content:center;font-style:normal;font-weight:800;flex-shrink:0;font-size:12px}
+.hero-visual{position:relative;width:100%;max-width:100%}
+.hero-img-card{position:relative;border-radius:16px;overflow:hidden;background:white;border:1px solid var(--gray-200);box-shadow:var(--shadow-lg);width:100%}
+@media(min-width:768px){.hero-img-card{border-radius:20px}}
+.hero-img-card img{width:100%;height:380px;object-fit:cover;object-position:top center;display:block}
+@media(min-width:480px){.hero-img-card img{height:440px}}
+@media(min-width:1024px){.hero-img-card img{height:560px}}
+.hero-float{position:absolute;left:12px;right:12px;bottom:12px;background:white;border:1px solid var(--gray-200);border-radius:12px;padding:12px 14px;box-shadow:var(--shadow);display:flex;gap:10px;align-items:center;z-index:2;max-width:calc(100% - 24px)}
+@media(min-width:768px){.hero-float{left:16px;right:16px;bottom:16px;padding:14px 16px;max-width:calc(100% - 32px);border-radius:14px}}
+.hero-float .icon{width:40px;height:40px;border-radius:10px;background:var(--navy);color:white;display:flex;align-items:center;justify-content:center;font-weight:800;flex-shrink:0;font-size:14px}
+.hero-float strong{display:block;color:var(--navy);font-size:13px;line-height:1.2;overflow-wrap:break-word}
+.hero-float span{font-size:11px;color:var(--gray-600);display:block}
+
+/* Sections */
+.section{padding:48px 0}
+@media(min-width:768px){.section{padding:72px 0}}
+@media(min-width:1024px){.section{padding:88px 0}}
+.section-gray{background:var(--gray-50)}
+.section-navy{background:var(--navy);color:#D9E2F0}
+.section-navy h2,.section-navy h3{color:white}
+.section-navy p{color:#C2D0E5}
+
+/* About */
+.about-grid{display:grid;grid-template-columns:1fr;gap:24px;align-items:start}
+@media(min-width:900px){.about-grid{grid-template-columns:340px 1fr;gap:40px}}
+.exam-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.pill{padding:7px 12px;border-radius:999px;border:1px solid var(--gray-200);background:white;font-size:12px;font-weight:700;color:var(--navy);white-space:nowrap}
+.pill-navy{background:var(--navy);color:white;border-color:var(--navy)}
+
+/* Premium */
+.premium-header{text-align:center;max-width:720px;margin:0 auto 28px}
+@media(min-width:768px){.premium-header{margin:0 auto 44px}}
+.subjects-grid{display:grid;grid-template-columns:1fr;gap:14px;margin-bottom:28px}
+@media(min-width:600px){.subjects-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:1024px){.subjects-grid{grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:40px}}
+.subject-card{background:white;border:1px solid var(--gray-200);border-radius:14px;padding:18px;box-shadow:0 2px 0 rgba(10,35,66,0.02);max-width:100%;overflow:hidden}
+@media(min-width:768px){.subject-card{border-radius:16px;padding:22px 20px}}
+.subject-card-head{display:flex;align-items:center;gap:10px;margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid var(--gray-100)}
+.subject-card-head .ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;color:white;font-weight:800;font-size:13px;flex-shrink:0}
+.subject-card.science .ic{background:#1E5BFF}
+.subject-card.arts .ic{background:#D92D20}
+.subject-card.commercial .ic{background:#16A34A}
+.subject-card h3{font-size:14px;letter-spacing:0.04em;text-transform:uppercase;overflow-wrap:break-word}
+.subject-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+.subject-list li{display:flex;align-items:center;gap:8px;font-size:13.5px;font-weight:600;color:var(--gray-700);overflow-wrap:break-word}
+.subject-list li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0}
+.offers-grid{display:grid;grid-template-columns:1fr;gap:20px;align-items:start;margin-top:10px}
+@media(min-width:1024px){.offers-grid{grid-template-columns:1.2fr 0.8fr;gap:28px}}
+.offers-list{display:grid;grid-template-columns:1fr;gap:10px}
+@media(min-width:600px){.offers-list{grid-template-columns:1fr 1fr}}
+.offer-item{display:flex;gap:10px;align-items:flex-start;background:var(--gray-50);border:1px solid var(--gray-200);border-radius:10px;padding:12px;max-width:100%;overflow:hidden}
+.offer-item .tick{width:26px;height:26px;border-radius:50%;background:var(--navy);color:white;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:11px;font-weight:800}
+.offer-item span{font-size:13px;font-weight:600;color:var(--gray-700);line-height:1.4;overflow-wrap:break-word}
+.price-card{background:var(--navy);color:white;border-radius:16px;padding:20px;position:relative;overflow:hidden;border:1px solid rgba(255,255,255,0.08);max-width:100%}
+@media(min-width:768px){.price-card{border-radius:18px;padding:28px}}
+.price-card::after{content:"";position:absolute;top:-40px;right:-40px;width:120px;height:120px;background:var(--gold);opacity:0.14;border-radius:50%;pointer-events:none}
+.price-card .label{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;font-weight:800;color:var(--gold-2);margin-bottom:10px}
+.price-card .price{font-family:'Plus Jakarta Sans';font-size:clamp(28px,8vw,40px);font-weight:800;line-height:1;color:white;margin-bottom:10px;overflow-wrap:break-word;word-break:break-word}
+.price-card .price small{font-size:13px;font-weight:600;color:#C2D0E5;display:inline-block;margin-left:4px}
+.price-card p{color:#C2D0E5;font-size:13px;margin-bottom:16px;line-height:1.5;overflow-wrap:break-word}
+.price-card .btn{width:100%;max-width:100%}
+
+/* Value */
+.value-head{display:flex;flex-direction:column;gap:12px;margin-bottom:20px}
+@media(min-width:768px){.value-head{flex-direction:row;justify-content:space-between;align-items:end;gap:20px;margin-bottom:28px}}
+.value-grid{display:grid;grid-template-columns:1fr;gap:12px}
+@media(min-width:600px){.value-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:1024px){.value-grid{grid-template-columns:repeat(4,1fr);gap:16px}}
+.value-card{background:white;border:1px solid var(--gray-200);border-radius:14px;padding:18px;box-shadow:0 2px 0 rgba(10,35,66,0.02);max-width:100%;overflow:hidden}
+@media(min-width:768px){.value-card{border-radius:16px;padding:22px}}
+.value-icon{width:40px;height:40px;border-radius:10px;background:var(--navy);color:var(--gold);display:flex;align-items:center;justify-content:center;margin-bottom:12px;font-weight:800;flex-shrink:0}
+.value-card h3{font-size:14px;margin-bottom:6px;overflow-wrap:break-word}
+.value-card p{font-size:13px;color:var(--gray-600);line-height:1.5;overflow-wrap:break-word}
+
+/* Audio */
+.audio-layout{display:grid;grid-template-columns:1fr;gap:24px;align-items:start}
+@media(min-width:1024px){.audio-layout{grid-template-columns:1.1fr 0.9fr;gap:36px}}
+.audio-image{border-radius:16px;overflow:hidden;border:1px solid var(--gray-200);box-shadow:var(--shadow);background:white;max-width:100%}
+@media(min-width:768px){.audio-image{border-radius:18px}}
+.audio-image img{width:100%;height:auto;object-fit:cover;display:block}
+.audio-features{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0;max-width:100%}
+.audio-feature{font-size:11px;font-weight:700;padding:6px 10px;border-radius:999px;background:white;border:1px solid var(--gray-200);color:var(--navy);white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:ellipsis}
+.how-card{background:white;border:1px solid var(--gray-200);border-radius:12px;padding:14px;display:flex;gap:12px;align-items:flex-start;margin:18px 0;max-width:100%;overflow:hidden}
+@media(min-width:768px){.how-card{border-radius:14px;padding:18px 20px}}
+.how-card .ic{width:36px;height:36px;border-radius:9px;background:var(--gold-light);color:var(--navy);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-weight:800;font-size:14px}
+.topics-wrap{margin-top:24px}
+.accordion{border:1px solid var(--gray-200);border-radius:12px;overflow:hidden;background:white;margin-bottom:10px;max-width:100%}
+@media(min-width:768px){.accordion{border-radius:14px;margin-bottom:12px}}
+.accordion-head{padding:14px 14px;display:flex;align-items:center;justify-content:space-between;gap:10px;cursor:pointer;user-select:none;background:white;transition:background .15s;max-width:100%}
+@media(min-width:768px){.accordion-head{padding:16px 18px}}
+.accordion-head:hover{background:var(--gray-50)}
+.accordion-head h4{font-size:12.5px;font-weight:800;letter-spacing:0.02em;text-transform:uppercase;display:flex;align-items:center;gap:8px;flex-wrap:wrap;overflow-wrap:break-word;flex:1}
+@media(min-width:768px){.accordion-head h4{font-size:14px;gap:10px}}
+.accordion-head h4 span.count{font-size:10px;background:var(--navy);color:white;padding:3px 8px;border-radius:999px;white-space:nowrap;flex-shrink:0}
+.accordion-head .chev{width:26px;height:26px;border-radius:50%;border:1px solid var(--gray-200);display:flex;align-items:center;justify-content:center;transition:transform .2s;flex-shrink:0;font-size:14px}
+.accordion.open .chev{transform:rotate(180deg);background:var(--navy);color:white;border-color:var(--navy)}
+.accordion-body{display:none;padding:0 14px 14px;max-width:100%;overflow:hidden}
+@media(min-width:768px){.accordion-body{padding:0 18px 18px}}
+.accordion.open .accordion-body{display:block}
+.topic-grid{display:grid;grid-template-columns:1fr;gap:0}
+@media(min-width:600px){.topic-grid{grid-template-columns:1fr 1fr;gap:0 16px}}
+.topic-grid div{font-size:12.5px;padding:7px 0;border-bottom:1px dashed var(--gray-200);color:var(--gray-700);font-weight:500;overflow-wrap:break-word;word-break:break-word;line-height:1.4}
+@media(min-width:768px){.topic-grid div{font-size:13px}}
+.topic-grid div strong{color:var(--navy);font-weight:700;margin-right:4px}
+
+/* Private */
+.private-grid{display:grid;grid-template-columns:1fr;gap:24px;align-items:start}
+@media(min-width:1024px){.private-grid{grid-template-columns:0.9fr 1.1fr;gap:40px;align-items:center}}
+.private-img{border-radius:16px;overflow:hidden;border:1px solid var(--gray-200);box-shadow:var(--shadow-lg);background:white;max-width:100%}
+@media(min-width:768px){.private-img{border-radius:20px}}
+.private-img img{width:100%;height:380px;object-fit:cover;object-position:top}
+@media(min-width:480px){.private-img img{height:440px}}
+@media(min-width:1024px){.private-img img{height:560px}}
+.private-content .sub{font-size:11px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:var(--navy);margin-bottom:10px;overflow-wrap:break-word}
+.private-list{display:grid;grid-template-columns:1fr;gap:10px;margin:18px 0}
+@media(min-width:600px){.private-list{grid-template-columns:1fr 1fr}}
+.private-list .item{display:flex;gap:8px;align-items:flex-start;font-size:13px;font-weight:600;color:var(--gray-700);overflow-wrap:break-word}
+.private-list .item i{width:24px;height:24px;border-radius:7px;background:var(--gold-light);color:var(--navy);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-style:normal;font-weight:800;font-size:11px}
+.meta-cards{display:grid;grid-template-columns:1fr;gap:10px;margin:18px 0}
+@media(min-width:480px){.meta-cards{grid-template-columns:1fr 1fr}}
+.meta-card{border:1px solid var(--gray-200);border-radius:10px;padding:12px;background:var(--gray-50);max-width:100%;overflow:hidden}
+@media(min-width:768px){.meta-card{border-radius:12px;padding:14px}}
+.meta-card .k{font-size:10px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--gray-600);margin-bottom:6px}
+.meta-card .v{font-size:13px;font-weight:700;color:var(--navy);overflow-wrap:break-word}
+
+/* Handbooks */
+.handbooks-grid{display:grid;grid-template-columns:1fr;gap:16px}
+@media(min-width:768px){.handbooks-grid{grid-template-columns:1fr 1fr;gap:20px}}
+@media(min-width:1024px){.handbooks-grid{gap:24px}}
+.book-card{background:white;border:1px solid var(--gray-200);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;max-width:100%}
+@media(min-width:768px){.book-card{border-radius:18px}}
+.book-cover{aspect-ratio:4/3;background:var(--gray-50);overflow:hidden;border-bottom:1px solid var(--gray-200);display:flex;align-items:center;justify-content:center;padding:10px;max-width:100%}
+.book-cover img{width:100%;height:100%;object-fit:contain;max-width:100%}
+.book-body{padding:16px;display:flex;flex-direction:column;flex:1;max-width:100%;overflow:hidden}
+@media(min-width:768px){.book-body{padding:22px}}
+.book-top{display:flex;flex-direction:column;gap:10px;margin-bottom:12px;max-width:100%}
+@media(min-width:480px){.book-top{flex-direction:row;align-items:flex-start;justify-content:space-between}}
+.book-title{font-size:16px;line-height:1.2;font-weight:800;color:var(--navy);overflow-wrap:break-word;flex:1}
+@media(min-width:768px){.book-title{font-size:18px}}
+.book-price{font-size:15px;font-weight:800;color:var(--navy);background:var(--gold-light);border:1px solid #FFE88A;padding:6px 12px;border-radius:999px;white-space:nowrap;align-self:flex-start;flex-shrink:0}
+.book-desc{font-size:13px;color:var(--gray-600);line-height:1.6;margin-bottom:12px;overflow-wrap:break-word}
+.book-topics{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;max-width:100%}
+.book-topics span{font-size:10.5px;font-weight:700;padding:4px 9px;border-radius:999px;background:var(--gray-50);border:1px solid var(--gray-200);color:var(--navy);max-width:100%;overflow-wrap:break-word;word-break:break-word}
+.book-body .btn{margin-top:auto;width:100%;max-width:100%}
+
+/* Edu App */
+.edu-grid{display:grid;grid-template-columns:1fr;gap:24px;align-items:start}
+@media(min-width:1024px){.edu-grid{grid-template-columns:1.1fr 0.9fr;gap:40px;align-items:center}}
+.edu-features{display:grid;grid-template-columns:1fr;gap:10px;margin:18px 0}
+@media(min-width:480px){.edu-features{grid-template-columns:1fr 1fr}}
+.edu-feature{display:flex;gap:10px;align-items:flex-start;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:10px;max-width:100%;overflow:hidden}
+@media(min-width:768px){.edu-feature{border-radius:12px;padding:12px}}
+.edu-feature .ic{width:28px;height:28px;border-radius:7px;background:var(--gold);color:var(--navy);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-weight:800;font-size:12px}
+.edu-feature span{font-size:12.5px;font-weight:600;color:#E2E8F0;line-height:1.4;overflow-wrap:break-word}
+.edu-cta{margin-top:20px;display:flex;gap:10px;flex-wrap:wrap;max-width:100%}
+.edu-cta .btn{flex:1 1 100%}
+@media(min-width:480px){.edu-cta .btn{flex:0 1 auto}}
+.edu-visual{position:relative;border-radius:16px;overflow:hidden;background:linear-gradient(135deg,#0E2F5C 0%,#0A2342 100%);border:1px solid rgba(255,255,255,0.12);padding:20px;min-height:auto;display:flex;flex-direction:column;justify-content:center;max-width:100%}
+@media(min-width:768px){.edu-visual{border-radius:18px;padding:24px;min-height:380px}}
+.edu-visual h3{color:white;font-size:18px;margin-bottom:8px;overflow-wrap:break-word}
+@media(min-width:768px){.edu-visual h3{font-size:22px;margin-bottom:10px}}
+.edu-visual p{color:#C2D0E5;font-size:13px;overflow-wrap:break-word}
+@media(min-width:768px){.edu-visual p{font-size:14px}}
+.edu-badge-row{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px;max-width:100%}
+.edu-badge{padding:5px 10px;border-radius:999px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:white;font-size:11px;font-weight:600;white-space:nowrap}
+
+/* Contact */
+.contact{padding:48px 0;text-align:center;background:white;border-top:1px solid var(--gray-200)}
+@media(min-width:768px){.contact{padding:72px 0}}
+@media(min-width:1024px){.contact{padding:88px 0}}
+.contact h2{max-width:640px;margin:0 auto 12px;overflow-wrap:break-word}
+.contact p{max-width:560px;margin:0 auto 20px;color:var(--gray-600);font-size:15px;overflow-wrap:break-word;padding:0 8px}
+.contact-card{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px;background:var(--gray-50);border:1px solid var(--gray-200);border-radius:999px;padding:10px 12px 10px 18px;margin:0 auto 20px;max-width:calc(100% - 16px);width:fit-content;overflow:hidden}
+@media(min-width:480px){.contact-card{padding:8px 8px 8px 18px;max-width:100%}}
+.contact-card strong{font-size:14px;color:var(--navy);overflow-wrap:break-word;word-break:break-word;text-align:center}
+@media(min-width:480px){.contact-card strong{font-size:15px}}
+@media(min-width:768px){.contact-card strong{font-size:16px}}
+.contact-card .icon{width:40px;height:40px;border-radius:50%;background:var(--navy);color:white;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px}
+@media(min-width:768px){.contact-card .icon{width:44px;height:44px}}
+
+/* Footer */
+.footer{background:var(--navy);color:#C2D0E5;padding:40px 0 20px;border-top:4px solid var(--gold);overflow:hidden}
+@media(min-width:768px){.footer{padding:56px 0 28px}}
+.footer-grid{display:grid;grid-template-columns:1fr;gap:24px;margin-bottom:28px}
+@media(min-width:600px){.footer-grid{grid-template-columns:1fr 1fr;gap:24px}}
+@media(min-width:1024px){.footer-grid{grid-template-columns:1.4fr 0.8fr 0.8fr 1fr;gap:32px;margin-bottom:36px}}
+.footer-brand .logo{filter:brightness(0) invert(1);height:32px;margin-bottom:12px}
+@media(min-width:768px){.footer-brand .logo{height:36px;margin-bottom:14px}}
+.footer-brand p{font-size:13px;line-height:1.6;color:#9DB0CC;overflow-wrap:break-word}
+.footer h4{color:white;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:12px}
+@media(min-width:768px){.footer h4{font-size:13px;margin-bottom:16px}}
+.footer-links{display:flex;flex-direction:column;gap:8px}
+@media(min-width:768px){.footer-links{gap:10px}}
+.footer-links a{font-size:13px;color:#9DB0CC;font-weight:500;overflow-wrap:break-word}
+.footer-links a:hover{color:white}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:16px;display:flex;flex-direction:column;gap:8px;font-size:11.5px;color:#7D90AD;overflow-wrap:break-word}
+@media(min-width:768px){.footer-bottom{flex-direction:row;justify-content:space-between;gap:12px;padding-top:20px;font-size:12.5px}}
+.footer-whatsapp{display:inline-flex;align-items:center;gap:6px;background:var(--gold);color:var(--navy);padding:9px 14px;border-radius:999px;font-weight:800;font-size:12px;margin-top:12px;max-width:100%;overflow-wrap:break-word;word-break:break-word}
+@media(min-width:768px){.footer-whatsapp{padding:10px 16px;font-size:13px;margin-top:14px}}
+
+/* Utility for no overflow */
+.no-overflow{overflow:hidden;max-width:100%}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="container header-inner">
+    <a href="#home" aria-label="MasterDeGenius Academy Home">
+      <img src="assets/logo.png" alt="MasterDeGenius Academy" class="logo">
+    </a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#tutorials">Tutorials</a>
+      <a href="#audios">Audio Lessons</a>
+      <a href="#private">Private Classes</a>
+      <a href="#handbooks">Handbooks</a>
+      <a href="#eduapp">Edu App</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a href="https://wa.me/2348168454014?text=Hello%20MasterDe%E2%80%99Genius%2C%20I%20would%20like%20to%20make%20an%20enquiry." target="_blank" rel="noopener" class="btn btn-navy">
+        <span>WhatsApp</span>
+        <span>↗</span>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span></button>
+    </div>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#tutorials">Tutorials</a>
+    <a href="#audios">Audio Lessons</a>
+    <a href="#private">Private Classes</a>
+    <a href="#handbooks">Handbooks</a>
+    <a href="#eduapp">Edu App</a>
+    <a href="#contact">Contact</a>
+    <a href="https://wa.me/2348168454014" target="_blank" rel="noopener" class="btn btn-gold">CONTACT ON WHATSAPP</a>
+  </div>
+</header>
+
+<main>
+<section id="home" class="hero">
+  <div class="container hero-grid">
+    <div class="hero-content">
+      <div class="eyebrow">Learn • Prepare • Excel</div>
+      <h1>Premium academic preparation for JAMB, WAEC, NECO and GCE.</h1>
+      <p class="lead">At MasterDe’Genius, we bring together seasoned professionals and experienced tutors whose academic knowledge and teaching expertise are dedicated to guiding students toward academic excellence.</p>
+      <div class="hero-ctas">
+        <a href="https://wa.me/2348168454014?text=Hello%20MasterDe%E2%80%99Genius%2C%20I%20would%20like%20to%20make%20an%20enquiry." target="_blank" rel="noopener" class="btn btn-gold">CONTACT US ON WHATSAPP</a>
+        <a href="#tutorials" class="btn btn-outline">EXPLORE OUR PROGRAMS</a>
+      </div>
+      <div class="hero-meta">
+        <div><i>✓</i> Science, Arts and Commercial</div>
+        <div><i>✓</i> Exam focused lessons</div>
+        <div><i>✓</i> 08168454014</div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-img-card">
+        <img src="assets/private-tutor.webp" alt="MasterDeGenius private tutor" onerror="this.src='assets/private-tutor.jpg'">
+      </div>
+      <div class="hero-float">
+        <div class="icon">M</div>
+        <div>
+          <strong>MasterDe’Genius Academy</strong>
+          <span>Your Success is Our Priority</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="section">
+  <div class="container about-grid">
+    <div>
+      <div class="badge badge-gold">About Academy</div>
+      <h2 style="margin-top:12px">A structured academy built for real examination success.</h2>
+      <div class="exam-pills">
+        <span class="pill pill-navy">JAMB</span>
+        <span class="pill">WAEC</span>
+        <span class="pill">NECO</span>
+        <span class="pill">GCE</span>
+      </div>
+    </div>
+    <div>
+      <p style="font-size:16px;color:var(--gray-900);font-weight:600;line-height:1.6;margin-bottom:12px">MasterDe’Genius Premium Tutorial Class is designed for students across various departments preparing for JAMB, WAEC, NECO, or GCE.</p>
+      <p style="font-size:14px;line-height:1.7">At MasterDe’Genius, we bring together seasoned professionals and experienced tutors whose academic knowledge and teaching expertise are dedicated to guiding students toward academic excellence. The academy provides a focused learning structure that helps students build consistency, confidence and a deeper understanding of their subjects.</p>
+      <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap">
+        <div style="display:flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:var(--navy)"><span style="width:8px;height:8px;background:var(--gold);border-radius:50%;display:inline-block;flex-shrink:0"></span> Seasoned professionals</div>
+        <div style="display:flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:var(--navy)"><span style="width:8px;height:8px;background:var(--gold);border-radius:50%;display:inline-block;flex-shrink:0"></span> Experienced tutors</div>
+        <div style="display:flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:var(--navy)"><span style="width:8px;height:8px;background:var(--gold);border-radius:50%;display:inline-block;flex-shrink:0"></span> Exam oriented</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tutorials" class="section section-gray">
+  <div class="container">
+    <div class="premium-header">
+      <div class="badge">Premium Program</div>
+      <h2 style="margin-top:12px">MasterDe’Genius Premium Tutorial Class</h2>
+      <p style="margin-top:10px;color:var(--gray-600);font-size:14px">Designed for students across various departments preparing for JAMB, WAEC, NECO and GCE. Give yourself the support, preparation, and consistency you need to excel.</p>
+    </div>
+
+    <div class="subjects-grid">
+      <div class="subject-card science">
+        <div class="subject-card-head">
+          <div class="ic">S</div>
+          <h3>Science</h3>
+        </div>
+        <ul class="subject-list">
+          <li>Mathematics</li>
+          <li>Biology</li>
+          <li>Physics</li>
+          <li>Chemistry</li>
+        </ul>
+      </div>
+      <div class="subject-card arts">
+        <div class="subject-card-head">
+          <div class="ic">A</div>
+          <h3>Arts</h3>
+        </div>
+        <ul class="subject-list">
+          <li>English</li>
+          <li>Government</li>
+          <li>CRS</li>
+          <li>Literature</li>
+          <li>Social Science</li>
+        </ul>
+      </div>
+      <div class="subject-card commercial">
+        <div class="subject-card-head">
+          <div class="ic">C</div>
+          <h3>Commercial</h3>
+        </div>
+        <ul class="subject-list">
+          <li>English</li>
+          <li>Mathematics</li>
+          <li>Financial Accounting</li>
+          <li>Economics</li>
+          <li>Commerce</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="offers-grid">
+      <div>
+        <h3 style="margin-bottom:12px">What the Tutorial Offers</h3>
+        <div class="offers-list">
+          <div class="offer-item"><div class="tick">✓</div><span>Frequent Questions & Answers (Q&A) Sessions</span></div>
+          <div class="offer-item"><div class="tick">✓</div><span>Study Partners to encourage accountability and consistency</span></div>
+          <div class="offer-item"><div class="tick">✓</div><span>Weekly Mock Examinations</span></div>
+          <div class="offer-item"><div class="tick">✓</div><span>Step by Step Solutions to Difficult Questions</span></div>
+          <div class="offer-item"><div class="tick">✓</div><span>Exam Focused Lessons & Practice</span></div>
+          <div class="offer-item"><div class="tick">✓</div><span>Personalized Academic Guidance</span></div>
+          <div class="offer-item"><div class="tick">✓</div><span>And lots more</span></div>
+          <div class="offer-item"><div class="tick">✓</div><span>Better Learning, Brighter Future</span></div>
+        </div>
+        <div style="margin-top:16px">
+          <img src="assets/premium-tutorial.webp" alt="MasterDeGenius Premium Tutorial" style="width:100%;max-width:100%;border-radius:12px;border:1px solid var(--gray-200)" onerror="this.src='assets/premium-tutorial.jpg'">
+        </div>
+      </div>
+      <div class="price-card">
+        <div class="label">Premium Access</div>
+        <div class="price">₦5,000 <small>MONTHLY</small></div>
+        <p>Give yourself the support, preparation, and consistency you need to excel in your examination. Secure your spot today!</p>
+        <p style="font-size:12px;color:var(--gold-2);font-weight:700">Your Success is Our Priority</p>
+        <a href="https://wa.me/2348168454014?text=Hello%20MasterDe%E2%80%99Genius%2C%20I%20am%20interested%20in%20the%20Premium%20Tutorial%20Class." target="_blank" rel="noopener" class="btn btn-gold">MESSAGE ON WHATSAPP</a>
+        <div style="margin-top:12px;font-size:11px;color:#9DB0CC;overflow-wrap:break-word">Contact: 08168454014 • Learn • Prepare • Excel</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="value-head">
+      <h2 style="max-width:480px">A learning environment designed for measurable progress.</h2>
+      <p style="max-width:360px;color:var(--gray-600);font-size:13px">From dedicated tutors to structured practice, every part of the tutorial is built to improve performance and results.</p>
+    </div>
+    <div class="value-grid">
+      <div class="value-card">
+        <div class="value-icon">◧</div>
+        <h3>Experienced and Dedicated Tutors</h3>
+        <p>Learn from seasoned professionals whose teaching expertise is focused on examination success.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">≡</div>
+        <h3>Structured Lessons & Practice</h3>
+        <p>Exam focused lessons, frequent Q&A and targeted practice to build consistency and confidence.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">↗</div>
+        <h3>Improved Performance & Results</h3>
+        <p>Weekly mocks, step by step solutions and personalized guidance to improve understanding.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">⧉</div>
+        <h3>Conducive Learning Environment</h3>
+        <p>A supportive, accountable and focused environment that encourages steady preparation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="audios" class="section section-gray">
+  <div class="container">
+    <div class="audio-layout">
+      <div>
+        <div class="badge badge-gold">200 Teaching Audios</div>
+        <h2 style="margin-top:12px">MasterDe’Genius 200 Pre Recorded Teaching Audios</h2>
+        <p style="margin-top:10px;color:var(--gray-600);font-size:14px;line-height:1.7">Prepare smarter with 200 pre-recorded teaching audios covering major topics in Government, CRS (Christian Religious Studies) and Literature in English. The lessons are structured around the relevant JAMB, WAEC, NECO, and GCE syllabuses.</p>
+
+        <div class="audio-features">
+          <span class="audio-feature">JAMB Syllabus</span>
+          <span class="audio-feature">WAEC Syllabus</span>
+          <span class="audio-feature">NECO Syllabus</span>
+          <span class="audio-feature">GCE Syllabus</span>
+          <span class="audio-feature">Learn at own pace</span>
+          <span class="audio-feature">Lifetime Access</span>
+          <span class="audio-feature">Mobile Device</span>
+          <span class="audio-feature">Exam Focused</span>
+        </div>
+
+        <div class="how-card">
+          <div class="ic">▶</div>
+          <div>
+            <strong style="color:var(--navy);font-size:13px">HOW IT WORKS</strong>
+            <p style="font-size:12.5px;color:var(--gray-600);margin-top:4px;line-height:1.6">Once payment is confirmed, all 200 teaching audios will be delivered to you and can be saved on your mobile phone or personal computer for convenient access and repeated listening.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:12px;background:white;border:1px solid var(--gray-200);border-radius:12px;padding:14px">
+          <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between">
+            <div>
+              <div style="font-size:10px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--gray-600)">Fee</div>
+              <div style="font-size:24px;font-weight:800;color:var(--navy);overflow-wrap:break-word">₦15,000 <span style="font-size:10px;font-weight:800;color:#D92D20;background:#FEF2F2;border:1px solid #FECACA;padding:3px 8px;border-radius:999px;margin-left:6px;vertical-align:middle;white-space:nowrap">NON NEGOTIABLE</span></div>
+            </div>
+            <a href="https://wa.me/2348168454014?text=Hello%20MasterDe%E2%80%99Genius%2C%20I%20would%20like%20to%20purchase%20the%20200%20Pre%20Recorded%20Teaching%20Audios%20for%20%E2%82%A615%2C000." target="_blank" rel="noopener" class="btn btn-gold" style="width:100%">GET THE 200 TEACHING AUDIOS</a>
+          </div>
+        </div>
+        <p style="font-size:11px;color:var(--gray-600);margin-top:8px">Contact: 08168454014 • Purchase yours today and start learning at your own pace.</p>
+      </div>
+      <div class="audio-image">
+        <img src="assets/audio-promo.webp" alt="MasterDeGenius 200 Teaching Audios" onerror="this.src='assets/audio-promo.jpg'">
+      </div>
+    </div>
+
+    <div class="topics-wrap">
+      <h3 style="margin-bottom:14px">Complete Topic Lists Included</h3>
+
+      <div class="accordion open" data-accordion>
+        <div class="accordion-head">
+          <h4>Government Topics <span class="count">46 Topics</span></h4>
+          <div class="chev">⌄</div>
+        </div>
+        <div class="accordion-body">
+          <div class="topic-grid">
+            <div><strong>1.</strong> Government</div>
+            <div><strong>24.</strong> Policy of Assimilation</div>
+            <div><strong>2.</strong> State/Nation</div>
+            <div><strong>25.</strong> Indirect Rule System</div>
+            <div><strong>3.</strong> Power/Authority</div>
+            <div><strong>26.</strong> Capitalism</div>
+            <div><strong>4.</strong> Legitimacy</div>
+            <div><strong>27.</strong> Socialism</div>
+            <div><strong>5.</strong> Sovereignty</div>
+            <div><strong>28.</strong> Communism</div>
+            <div><strong>6.</strong> Political Culture</div>
+            <div><strong>29.</strong> Communalism</div>
+            <div><strong>7.</strong> Political Socialization</div>
+            <div><strong>30.</strong> Feudalism</div>
+            <div><strong>8.</strong> Public Opinion</div>
+            <div><strong>31.</strong> Fascism/Nazism</div>
+            <div><strong>9.</strong> Separation of Power</div>
+            <div><strong>32.</strong> Unicameralism</div>
+            <div><strong>10.</strong> Types of Election</div>
+            <div><strong>33.</strong> Bicameralism</div>
+            <div><strong>11.</strong> Types of Voting</div>
+            <div><strong>34.</strong> Bureaucracy</div>
+            <div><strong>12.</strong> Civil Service</div>
+            <div><strong>35.</strong> Pressure Group</div>
+            <div><strong>13.</strong> Public Corporation</div>
+            <div><strong>36.</strong> Political Party</div>
+            <div><strong>14.</strong> Democracy</div>
+            <div><strong>37.</strong> Constitutional Development</div>
+            <div><strong>15.</strong> Oligarchy</div>
+            <div><strong>38.</strong> Military Rule</div>
+            <div><strong>16.</strong> Republicanism</div>
+            <div><strong>39.</strong> Nigerian Federalism</div>
+            <div><strong>17.</strong> Cabinet System</div>
+            <div><strong>40.</strong> Foreign Policy</div>
+            <div><strong>18.</strong> Presidential System</div>
+            <div><strong>41.</strong> Non-Aligned Movement</div>
+            <div><strong>19.</strong> Federal System</div>
+            <div><strong>42.</strong> OAU/AU</div>
+            <div><strong>20.</strong> Unitary System</div>
+            <div><strong>43.</strong> ECOWAS</div>
+            <div><strong>21.</strong> Confederation System</div>
+            <div><strong>44.</strong> UN</div>
+            <div><strong>22.</strong> Constitution</div>
+            <div><strong>45.</strong> OPEC</div>
+            <div><strong>23.</strong> Judicial Independence</div>
+            <div><strong>46.</strong> Commonwealth</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion" data-accordion>
+        <div class="accordion-head">
+          <h4>Literature in English Topics <span class="count">25+ Topics</span></h4>
+          <div class="chev">⌄</div>
+        </div>
+        <div class="accordion-body">
+          <div class="topic-grid">
+            <div><strong>1.</strong> Genres of Literature</div>
+            <div><strong>14.</strong> Kinds of Repetition</div>
+            <div><strong>2.</strong> Functions of Literature</div>
+            <div><strong>15.</strong> Figure of Speech</div>
+            <div><strong>3.</strong> Literary Devices in Drama</div>
+            <div><strong>16.</strong> How to Analyse Poetry, Prose and Drama</div>
+            <div><strong>4.</strong> Types of Drama</div>
+            <div><strong>17.</strong> The Steaks in Beauty</div>
+            <div><strong>5.</strong> Types of Speech</div>
+            <div><strong>18.</strong> The Breast of the Sea</div>
+            <div><strong>6.</strong> Kinds of Characters</div>
+            <div><strong>19.</strong> The Telephone Call</div>
+            <div><strong>7.</strong> Parts of Stage</div>
+            <div><strong>20.</strong> The Stone</div>
+            <div><strong>8.</strong> Literary Devices in Prose</div>
+            <div><strong>21.</strong> The Nun's Priest's Tale</div>
+            <div><strong>9.</strong> Types of Prose</div>
+            <div><strong>22.</strong> Night</div>
+            <div><strong>10.</strong> Types of Plot</div>
+            <div><strong>23.</strong> New Tongue</div>
+            <div><strong>11.</strong> Poetic Devices</div>
+            <div><strong>24.</strong> Once Upon a Time</div>
+            <div><strong>12.</strong> Types of Poetry</div>
+            <div><strong>25.</strong> Still I Rise</div>
+            <div><strong>13.</strong> Types of Imagery</div>
+            <div>Plus detailed poem analysis</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion" data-accordion>
+        <div class="accordion-head">
+          <h4>CRS Topics <span class="count">37 Topics</span></h4>
+          <div class="chev">⌄</div>
+        </div>
+        <div class="accordion-body">
+          <div class="topic-grid">
+            <div><strong>1.</strong> Order of Creation</div>
+            <div><strong>20.</strong> Transfiguration</div>
+            <div><strong>2.</strong> Noah's Covenant</div>
+            <div><strong>21.</strong> Jesus' Trial, Death and Resurrection</div>
+            <div><strong>3.</strong> Abrahamic Covenant</div>
+            <div><strong>22.</strong> Advent of the Church</div>
+            <div><strong>4.</strong> Leadership Qualities</div>
+            <div><strong>23.</strong> Replacing Judas</div>
+            <div><strong>5.</strong> Disobedience of Saul</div>
+            <div><strong>24.</strong> Seven Deacons</div>
+            <div><strong>6.</strong> Parental Responsibilities</div>
+            <div><strong>25.</strong> Conversion of the Gentiles</div>
+            <div><strong>7.</strong> Greed and Its Effects</div>
+            <div><strong>26.</strong> Council of Jerusalem</div>
+            <div><strong>8.</strong> Naboth's Vineyard</div>
+            <div><strong>27.</strong> The Persecution of the Church</div>
+            <div><strong>9.</strong> God's Supremacy</div>
+            <div><strong>28.</strong> Conversion of Saul</div>
+            <div><strong>10.</strong> The Prophets</div>
+            <div><strong>29.</strong> Missions of Paul</div>
+            <div><strong>11.</strong> Invasive Decisions</div>
+            <div><strong>30.</strong> Civic Responsibilities</div>
+            <div><strong>12.</strong> Reformation of King Josiah</div>
+            <div><strong>31.</strong> Impartiality</div>
+            <div><strong>13.</strong> Rebuilding of the Temple</div>
+            <div><strong>32.</strong> Dignity of Labour</div>
+            <div><strong>14.</strong> Birth and Ministry of John the Baptist</div>
+            <div><strong>33.</strong> Prayer</div>
+            <div><strong>15.</strong> Jesus' Parables</div>
+            <div><strong>34.</strong> Gifts of the Spirit</div>
+            <div><strong>16.</strong> Sermon on the Mount</div>
+            <div><strong>35.</strong> Fruits of the Spirit</div>
+            <div><strong>17.</strong> Mission of the Seventy</div>
+            <div><strong>18.</strong> Mission of the Twelve</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="private" class="section">
+  <div class="container private-grid">
+    <div class="private-img">
+      <img src="assets/private-tutor.webp" alt="MasterDeGenius private sessions" onerror="this.src='assets/private-tutor.jpg'">
+    </div>
+    <div class="private-content">
+      <div class="badge badge-gold">Private Classes</div>
+      <h2 style="margin-top:12px">MasterDe’Genius Private Tutorial Sessions</h2>
+      <div class="sub">Personalized. Focused. One on One.</div>
+      <p style="font-size:14px;line-height:1.7;color:var(--gray-600)">MasterDe’Genius offers private one on one tutorial sessions for students in both Junior Secondary School (JSS) and Senior Secondary School (SSS), across different departments and subjects.</p>
+      <p style="font-size:13px;line-height:1.7;margin-top:8px;color:var(--gray-600)">Whether you need help understanding a particular subject, topic, or difficult concept, our private sessions are designed to give you the individual attention you need to learn with confidence.</p>
+
+      <h3 style="margin-top:18px;font-size:15px">What You Get</h3>
+      <div class="private-list">
+        <div class="item"><i>✓</i> One on one attention from a tutor</div>
+        <div class="item"><i>✓</i> Lessons tailored to your specific needs</div>
+        <div class="item"><i>✓</i> Focus on difficult subjects and topics</div>
+        <div class="item"><i>✓</i> Clear, step by step explanations</div>
+        <div class="item"><i>✓</i> Targeted practice and questions</div>
+        <div class="item"><i>✓</i> Flexible learning sessions</div>
+      </div>
+
+      <div class="meta-cards">
+        <div class="meta-card">
+          <div class="k">Fees</div>
+          <div class="v">Varies based on:</div>
+          <div style="font-size:12px;color:var(--gray-600);margin-top:6px;line-height:1.5">• Number of subjects<br>• Number of classes or sessions<br>• Class level of the student</div>
+        </div>
+        <div class="meta-card">
+          <div class="k">Venue</div>
+          <div class="v">Google Meet</div>
+          <div style="font-size:11px;font-weight:700;color:var(--navy);margin-top:6px;background:var(--gold-light);display:inline-block;padding:4px 10px;border-radius:999px;border:1px solid #FFE88A">Online Only</div>
+          <div style="font-size:12px;color:var(--gray-600);margin-top:8px">Learn smarter. Achieve more!</div>
+        </div>
+      </div>
+
+      <p style="font-size:13px;font-weight:600;color:var(--navy);margin-top:10px">Ready to improve your understanding and academic performance?</p>
+      <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
+        <a href="https://wa.me/2348168454014?text=Hello%20MasterDe%E2%80%99Genius%2C%20I%20am%20interested%20in%20booking%20a%20private%20tutorial%20session." target="_blank" rel="noopener" class="btn btn-gold" style="width:100%">BOOK YOUR PRIVATE SESSION</a>
+        <a href="https://wa.me/2348168454014" target="_blank" rel="noopener" class="btn btn-outline" style="width:100%">Chat on WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="handbooks" class="section section-gray">
+  <div class="container">
+    <div style="text-align:center;max-width:720px;margin:0 auto 24px">
+      <div class="badge">Handbooks</div>
+      <h2 style="margin-top:12px">MasterDe’Genius Handbooks</h2>
+      <p style="margin-top:8px;color:var(--gray-600);font-size:13px">Comprehensive, examination oriented guides written in a simple, practical style to help students excel.</p>
+    </div>
+
+    <div class="handbooks-grid">
+      <div class="book-card">
+        <div class="book-cover">
+          <img src="assets/english-handbook.webp" alt="The Genius Use of English Handbook" onerror="this.src='assets/english-handbook.jpg'">
+        </div>
+        <div class="book-body">
+          <div class="book-top">
+            <div class="book-title">The Genius Use of English Handbook</div>
+            <div class="book-price">₦2,000</div>
+          </div>
+          <div class="book-desc">A comprehensive guide designed to equip students with the knowledge and skills required to excel in JAMB, WAEC, NECO, GCE, and other English Language examinations. Written in a simple, practical, and examination oriented style.</div>
+          <div class="book-topics">
+            <span>Lexis and Structure</span>
+            <span>Comprehension</span>
+            <span>Register</span>
+            <span>Antonyms and Synonyms</span>
+            <span>Phrasal Verbs</span>
+            <span>Idiomatic Expressions</span>
+            <span>Multiple Adjectives</span>
+            <span>Pluralization</span>
+            <span>Direct and Indirect Speech</span>
+            <span>100 Grammatical Rules</span>
+            <span>100 Misused Structures</span>
+            <span>Vocabulary</span>
+            <span>Concord</span>
+            <span>Grammar</span>
+          </div>
+          <a href="https://wa.me/2348168454014?text=Hello%20MasterDe%E2%80%99Genius%2C%20I%20would%20like%20to%20purchase%20The%20Genius%20Use%20of%20English%20Handbook%20for%20%E2%82%A62%2C000." target="_blank" rel="noopener" class="btn btn-navy">GET YOUR COPY • ₦2,000</a>
+        </div>
+      </div>
+
+      <div class="book-card">
+        <div class="book-cover" style="background:#F5F0FF">
+          <img src="assets/literature-handbook.webp" alt="The Genius Literature in English Handbook" onerror="this.src='assets/literature-handbook.jpg'">
+        </div>
+        <div class="book-body">
+          <div class="book-top">
+            <div class="book-title">The Genius Literature in English Handbook</div>
+            <div class="book-price">₦3,000</div>
+          </div>
+          <div class="book-desc">The handbook comprises full analysis of all recommended poems, in depth explanations on relevant literary appreciations, devices, figures of speech and lots more.</div>
+          <div class="book-topics">
+            <span>Poetry</span>
+            <span>Drama</span>
+            <span>Prose</span>
+            <span>Literary Criticism</span>
+            <span>Genres</span>
+            <span>Poetic Devices</span>
+            <span>Types of Poetry</span>
+            <span>Analyse Poetry</span>
+            <span>Exam Focused</span>
+            <span>Past Questions</span>
+            <span>Easy Language</span>
+          </div>
+          <div style="font-size:12px;color:var(--gray-700);background:var(--gray-50);border:1px solid var(--gray-200);border-radius:10px;padding:10px 12px;margin-bottom:12px;line-height:1.5;overflow-wrap:break-word">
+            <strong style="color:var(--navy)">Full Analysis:</strong> She walks in beauty, The Breast of the Sea, Hearty Garland, Not my business, Night, New Tongue, Once Upon a Time, Still I rise, The telephone call, The stone, The Nun's Priest's tale.
+          </div>
+          <a href="https://wa.me/2348168454014?text=Hello%20MasterDe%E2%80%99Genius%2C%20I%20would%20like%20to%20purchase%20The%20Genius%20Literature%20in%20English%20Handbook%20for%20%E2%82%A63%2C000." target="_blank" rel="noopener" class="btn btn-navy">GET YOUR COPY • ₦3,000</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="eduapp" class="section section-navy">
+  <div class="container edu-grid">
+    <div>
+      <div class="badge" style="background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.15);color:white">Edu App</div>
+      <h2 style="margin-top:12px">MasterDeGenius Edu App</h2>
+      <p style="margin-top:10px;font-size:14px;line-height:1.7">MasterDeGenius Edu App is designed to be every student's trusted study companion, packed with powerful features to support academic success.</p>
+
+      <div class="edu-features">
+        <div class="edu-feature"><div class="ic">✓</div><span>Practice Questions</span></div>
+        <div class="edu-feature"><div class="ic">✓</div><span>CBT Mock Examinations</span></div>
+        <div class="edu-feature"><div class="ic">✓</div><span>AI Powered Explanations</span></div>
+        <div class="edu-feature"><div class="ic">✓</div><span>Progress Tracking System</span></div>
+        <div class="edu-feature"><div class="ic">✓</div><span>Personalized Learning</span></div>
+        <div class="edu-feature"><div class="ic">✓</div><span>Smart Insights</span></div>
+      </div>
+
+      <p style="margin-top:12px;font-size:13px;line-height:1.6">Whether you are preparing for JAMB, WAEC, NECO, Post UTME, or other examinations, MasterDeGenius Edu App provides the tools you need to study smarter, track your performance, and improve consistently.</p>
+      <p style="margin-top:12px;font-weight:700;color:white;font-size:14px">Your pathway to academic excellence starts here.</p>
+      <p style="margin-top:6px;color:#9DB0CC;font-size:12px">Create your account today and enjoy an amazing learning experience with MasterDeGenius Edu App.</p>
+
+      <div class="edu-cta">
+        <a href="https://www.masterdegenius.com.ng/" target="_blank" rel="noopener" class="btn btn-gold">VISIT EDU APP</a>
+        <a href="https://www.masterdegenius.com.ng/" target="_blank" rel="noopener" class="btn" style="background:rgba(255,255,255,0.08);color:white;border-color:rgba(255,255,255,0.18)">masterdegenius.com.ng ↗</a>
+      </div>
+    </div>
+    <div class="edu-visual">
+      <h3>Your trusted study companion</h3>
+      <p>Practice, mock exams, AI explanations and progress tracking in one place. Designed for serious students who want to excel.</p>
+      <div class="edu-badge-row">
+        <span class="edu-badge">JAMB</span>
+        <span class="edu-badge">WAEC</span>
+        <span class="edu-badge">NECO</span>
+        <span class="edu-badge">Post UTME</span>
+        <span class="edu-badge">GCE</span>
+      </div>
+      <div style="margin-top:18px;background:white;border-radius:12px;padding:12px;display:flex;gap:10px;align-items:center;max-width:100%">
+        <div style="width:40px;height:40px;border-radius:9px;background:var(--navy);color:white;display:flex;align-items:center;justify-content:center;font-weight:800;flex-shrink:0">M</div>
+        <div style="flex:1;min-width:0">
+          <div style="font-weight:800;color:var(--navy);font-size:13px;overflow-wrap:break-word">MasterDeGenius Edu App</div>
+          <div style="font-size:11px;color:var(--gray-600)">Learn • Prepare • Excel</div>
+        </div>
+        <div style="font-size:10px;font-weight:800;background:var(--gold-light);border:1px solid #FFE88A;padding:4px 8px;border-radius:999px;color:var(--navy);flex-shrink:0;white-space:nowrap">Official</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="container">
+    <div class="badge badge-gold" style="margin-bottom:12px">Contact</div>
+    <h2>Ready to start your preparation with MasterDe’Genius?</h2>
+    <p>Contact us directly on WhatsApp for enquiries, tutorial registration, audio purchases, handbooks and private sessions.</p>
+
+    <div class="contact-card">
+      <strong>MASTERDE’GENIUS • 08168454014</strong>
+      <div class="icon">✆</div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:10px;align-items:center;max-width:100%;padding:0 8px">
+      <a href="https://wa.me/2348168454014?text=Hello%20MasterDe%E2%80%99Genius%2C%20I%20would%20like%20to%20get%20started." target="_blank" rel="noopener" class="btn btn-gold" style="width:100%;max-width:340px;padding:16px 24px;font-size:15px">CONTACT US ON WHATSAPP</a>
+      <a href="https://www.masterdegenius.com.ng/" target="_blank" rel="noopener" class="btn btn-outline" style="width:100%;max-width:340px">VISIT EDU APP</a>
+    </div>
+
+    <div style="margin-top:20px;display:flex;flex-wrap:wrap;justify-content:center;gap:8px;font-size:11px;color:var(--gray-600);padding:0 8px">
+      <span style="background:var(--gray-50);border:1px solid var(--gray-200);padding:5px 10px;border-radius:999px;white-space:nowrap">✓ Premium ₦5,000 Monthly</span>
+      <span style="background:var(--gray-50);border:1px solid var(--gray-200);padding:5px 10px;border-radius:999px;white-space:nowrap">✓ 200 Audios ₦15,000</span>
+      <span style="background:var(--gray-50);border:1px solid var(--gray-200);padding:5px 10px;border-radius:999px;white-space:nowrap">✓ Handbooks ₦2,000 & ₦3,000</span>
+      <span style="background:var(--gray-50);border:1px solid var(--gray-200);padding:5px 10px;border-radius:999px;white-space:nowrap">✓ Private • Google Meet</span>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/logo.png" alt="MasterDeGenius Academy" class="logo">
+        <div style="font-weight:800;color:white;letter-spacing:0.02em;font-size:14px;overflow-wrap:break-word">MASTERDE’GENIUS ACADEMY</div>
+        <div style="font-size:11px;letter-spacing:0.18em;font-weight:800;color:var(--gold);margin-top:4px">Learn • Prepare • Excel</div>
+        <p style="margin-top:12px">MasterDe’Genius brings together seasoned professionals and experienced tutors dedicated to helping students achieve academic excellence in JAMB, WAEC, NECO and GCE.</p>
+        <a href="https://wa.me/2348168454014" target="_blank" rel="noopener" class="footer-whatsapp">WhatsApp: 08168454014 ↗</a>
+      </div>
+      <div>
+        <h4>Programs</h4>
+        <div class="footer-links">
+          <a href="#tutorials">Premium Tutorial Class</a>
+          <a href="#audios">200 Teaching Audios</a>
+          <a href="#private">Private Tutorial Sessions</a>
+          <a href="#handbooks">Handbooks</a>
+          <a href="#eduapp">Edu App</a>
+        </div>
+      </div>
+      <div>
+        <h4>Subjects</h4>
+        <div class="footer-links">
+          <a href="#tutorials">Science: Math, Biology, Physics, Chemistry</a>
+          <a href="#tutorials">Arts: English, Government, CRS, Literature</a>
+          <a href="#tutorials">Commercial: Accounting, Economics, Commerce</a>
+          <a href="#audios">Government Topics</a>
+          <a href="#audios">CRS Topics</a>
+        </div>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <div class="footer-links">
+          <a href="https://wa.me/2348168454014" target="_blank" rel="noopener">WhatsApp: 08168454014</a>
+          <a href="https://www.masterdegenius.com.ng/" target="_blank" rel="noopener">Edu App: masterdegenius.com.ng</a>
+          <a href="#contact">Venue: Google Meet (Online Only)</a>
+          <a href="#handbooks">English Handbook ₦2,000</a>
+          <a href="#handbooks">Literature Handbook ₦3,000</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© <span id="year"></span> MasterDe’Genius Academy. Learn • Prepare • Excel. All rights reserved.</div>
+      <div>Premium educational brand • No fake testimonials</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const hamburger = document.getElementById('hamburger');
+const mobileNav = document.getElementById('mobileNav');
+hamburger.addEventListener('click', ()=>{
+  mobileNav.classList.toggle('open');
+  const open = mobileNav.classList.contains('open');
+  hamburger.setAttribute('aria-expanded', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+});
+mobileNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+  mobileNav.classList.remove('open');
+  document.body.style.overflow = '';
+}));
+document.querySelectorAll('[data-accordion]').forEach(acc=>{
+  const head = acc.querySelector('.accordion-head');
+  head.addEventListener('click', ()=>{
+    acc.classList.toggle('open');
+  });
+});
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
